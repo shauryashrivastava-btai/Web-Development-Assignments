@@ -32,7 +32,7 @@
             display: block;
         }
 
-        /* Navbar - Mobile First */
+        /* Navbar - Flexbox */
         .navbar {
             background-color: #14213d;
             color: white;
@@ -40,7 +40,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            gap: 0.75rem;
         }
 
         .logo {
@@ -50,6 +51,7 @@
 
         .nav-links {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1rem;
             list-style: none;
@@ -59,6 +61,13 @@
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
+        }
+
+        /* Main Page Layout - CSS Grid */
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
         }
 
         /* Hero Section */
@@ -85,15 +94,14 @@
         .hero img {
             width: 100%;
             max-width: 31.25rem;
-            height: auto;
             aspect-ratio: 2 / 1;
             object-fit: cover;
             border-radius: 0.5rem;
         }
 
-        /* Features - Mobile */
+        /* Feature Cards - CSS Grid */
         .features {
-            padding: 1.5rem 1rem;
+            padding: 0 1rem 1.5rem;
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
@@ -124,11 +132,10 @@
             font-size: 0.9rem;
         }
 
-        /* Tablet - 768px and Above */
+        /* Tablet Layout */
         @media (min-width: 768px) {
             .navbar {
                 flex-direction: row;
-                justify-content: space-between;
             }
 
             .hero {
@@ -141,11 +148,11 @@
 
             .features {
                 grid-template-columns: repeat(2, 1fr);
-                padding: 2rem;
+                padding: 0 2rem 2rem;
             }
         }
 
-        /* Desktop - 1024px and Above */
+        /* Desktop Layout */
         @media (min-width: 1024px) {
             .hero {
                 padding: 4rem 2rem;
@@ -158,6 +165,7 @@
             .features {
                 grid-template-columns: repeat(3, 1fr);
                 max-width: 75rem;
+                width: 100%;
                 margin: 0 auto;
             }
         }
@@ -166,7 +174,7 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar: Flexbox -->
     <header class="navbar">
         <div class="logo">TravelEase</div>
 
@@ -179,7 +187,7 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Main Content: CSS Grid -->
     <main>
         <section class="hero" id="home">
             <h1>Plan Your Next Trip in Minutes</h1>
@@ -191,9 +199,7 @@
             >
         </section>
 
-        <!-- Feature Cards -->
         <section class="features" id="trips">
-
             <article class="feature-card">
                 <h2>Easy Booking</h2>
                 <p>Book your next trip in just a few clicks.</p>
@@ -208,11 +214,9 @@
                 <h2>24/7 Help</h2>
                 <p>Get support whenever you need it.</p>
             </article>
-
         </section>
     </main>
 
-    <!-- Footer -->
     <footer id="contact">
         <p>&copy; 2026 TravelEase. Happy Travels!</p>
     </footer>
