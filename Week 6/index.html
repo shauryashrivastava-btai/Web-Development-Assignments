@@ -13,15 +13,38 @@
 
         body {
             margin: 0;
-            padding: 20px;
+            padding: 0 20px 90px;
             font-family: Arial, sans-serif;
             background: #eef2ff;
             color: #1e293b;
         }
 
-        h1 {
+        /* 6.4: Sticky Top Bar */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -20px;
+            padding: 18px;
+            background: #315bea;
+            color: white;
             text-align: center;
-            color: #315bea;
+        }
+
+        .top-bar h1 {
+            margin: 0 0 10px;
+            font-size: 22px;
+        }
+
+        .top-bar a {
+            color: white;
+            margin: 0 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .top-bar a:hover {
+            text-decoration: underline;
         }
 
         /* 6.2: Profile Cards */
@@ -74,21 +97,58 @@
             text-align: left;
             line-height: 1.6;
         }
+
+        /* 6.4: Fixed + Button */
+        .add-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 200;
+            width: 60px;
+            height: 60px;
+            border: none;
+            border-radius: 50%;
+            background: #315bea;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px #0003;
+        }
+
+        .add-button:hover {
+            background: #1e40af;
+        }
+
+        /* Extra content for testing page scrolling */
+        .extra-content {
+            max-width: 320px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 12px;
+            background: white;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
-    <h1>My Profile Cards</h1>
+    <!-- Task 6.4: Sticky Navigation -->
+    <header class="top-bar">
+        <h1>My Profile Page</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#goals">Goals</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Task 6.2: Blue Profile Card -->
-    <section class="card">
+    <!-- Task 6.2 and 6.3: Blue Profile Card -->
+    <section class="card" id="about">
         <div class="avatar">S</div>
-
         <h2>Shaurya Shrivastava</h2>
         <p>B.Tech Artificial Intelligence Student</p>
 
-        <!-- Task 6.3: Scrollable Bio -->
         <div class="bio">
             <h3>About Me</h3>
             <p>
@@ -102,20 +162,31 @@
             </p>
             <p>
                 My goal is to become a skilled developer and create
-                useful projects. I want to learn JavaScript and explore
-                more areas of technology.
+                useful projects. I also want to learn JavaScript.
             </p>
         </div>
     </section>
 
     <!-- Task 6.2: Green Profile Card -->
-    <section class="card card-green">
+    <section class="card card-green" id="goals">
         <div class="avatar">S</div>
-
         <h2>My Coding Goals</h2>
         <p>Future Web Developer</p>
         <p>Learning new skills and building projects.</p>
     </section>
+
+    <!-- Extra content to test scrolling -->
+    <section class="extra-content" id="contact">
+        <h2>Contact & More</h2>
+        <p>
+            Thanks for visiting my profile page!
+            Keep scrolling to test the sticky navigation
+            and fixed button.
+        </p>
+    </section>
+
+    <!-- Task 6.4: Fixed Button -->
+    <button class="add-button" aria-label="Add">+</button>
 
 </body>
 </html>
