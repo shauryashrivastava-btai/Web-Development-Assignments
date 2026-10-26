@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 - Profile Cards</title>
+
+    <style>
+        /* 6.1: Box Model */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #eef2ff;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            color: #315bea;
+        }
+
+        /* 6.2: First profile card */
+        .card {
+            width: 100%;
+            max-width: 320px;
+            margin: 30px auto;
+            padding: 20px;
+            border: 3px solid #315bea;
+            border-radius: 16px;
+            background: white;
+            text-align: center;
+        }
+
+        /* Circular avatar */
+        .avatar {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
+            border: 3px solid #315bea;
+            border-radius: 50%;
+            background: #315bea;
+            color: white;
+            font-size: 36px;
+            line-height: 84px;
+        }
+
+        /* Second card: green colour version */
+        .card-green {
+            border-color: #16845b;
+            background: #f0fdf4;
+        }
+
+        .card-green .avatar {
+            border-color: #16845b;
+            background: #16845b;
+        }
+
+        .card-green h2 {
+            color: #16845b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Profile Cards</h1>
+
+    <!-- First profile card: Blue theme -->
+    <section class="card">
+        <div class="avatar">S</div>
+        <h2>Shaurya Shrivastava</h2>
+        <p>B.Tech Artificial Intelligence Student</p>
+        <p>Learning HTML and CSS</p>
+    </section>
+
+    <!-- Second profile card: Green theme -->
+    <section class="card card-green">
+        <div class="avatar">S</div>
+        <h2>My Coding Goals</h2>
+        <p>Future Web Developer</p>
+        <p>Learning new skills and building projects.</p>
+    </section>
+
+</body>
+</html>
