@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 7 - Flexbox Navbar</title>
+    <title>Week 7 - Flexbox Landing Page</title>
 
     <style>
         * {
@@ -16,7 +16,7 @@
             background: #f4f6ff;
         }
 
-        /* Task 7.1: Navbar using Flexbox */
+        /* Task 7.1: Flexbox Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -46,14 +46,14 @@
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-size: 15px;
         }
 
         .nav-links a:hover {
             color: #ffb703;
         }
 
-        .signup {
+        .signup,
+        .get-started {
             padding: 10px 16px;
             border: none;
             border-radius: 6px;
@@ -63,10 +63,36 @@
             cursor: pointer;
         }
 
-        /* Mobile-friendly navbar */
+        /* Task 7.2: Centre Banner Using Flexbox */
+        .banner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 300px;
+            padding: 30px 15px;
+            background: #315bea;
+            color: white;
+            text-align: center;
+        }
+
+        .banner h1 {
+            margin: 0 0 12px;
+            font-size: 32px;
+        }
+
+        .banner p {
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
         @media (max-width: 480px) {
             .navbar {
-                padding: 15px 12px;
+                padding: 15px 10px;
+            }
+
+            .logo {
+                font-size: 18px;
             }
 
             .nav-right {
@@ -74,20 +100,20 @@
             }
 
             .nav-links {
-                gap: 10px;
+                gap: 8px;
             }
 
             .nav-links a {
                 font-size: 12px;
             }
 
-            .logo {
-                font-size: 18px;
-            }
-
             .signup {
                 padding: 8px;
-                font-size: 12px;
+                font-size: 11px;
+            }
+
+            .banner h1 {
+                font-size: 26px;
             }
         }
     </style>
@@ -95,14 +121,11 @@
 
 <body>
 
+    <!-- Task 7.1: Navbar -->
     <header class="navbar">
-
-        <!-- Logo on the left -->
         <div class="logo">CodeLab</div>
 
-        <!-- Links and button on the right -->
         <div class="nav-right">
-
             <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#courses">Courses</a>
@@ -110,10 +133,15 @@
             </nav>
 
             <button class="signup">Sign up</button>
-
         </div>
-
     </header>
+
+    <!-- Task 7.2: Centred Banner -->
+    <section class="banner" id="home">
+        <h1>Learn Web Development</h1>
+        <p>Start from zero. Build real projects.</p>
+        <button class="get-started">Get started</button>
+    </section>
 
 </body>
 </html>
