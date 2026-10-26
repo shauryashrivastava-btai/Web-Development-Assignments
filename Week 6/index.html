@@ -24,7 +24,7 @@
             color: #315bea;
         }
 
-        /* 6.2: First profile card */
+        /* 6.2: Profile Cards */
         .card {
             width: 100%;
             max-width: 320px;
@@ -36,7 +36,6 @@
             text-align: center;
         }
 
-        /* Circular avatar */
         .avatar {
             width: 90px;
             height: 90px;
@@ -49,7 +48,6 @@
             line-height: 84px;
         }
 
-        /* Second card: green colour version */
         .card-green {
             border-color: #16845b;
             background: #f0fdf4;
@@ -63,6 +61,19 @@
         .card-green h2 {
             color: #16845b;
         }
+
+        /* 6.3: Scrollable Bio */
+        .bio {
+            height: 120px;
+            overflow-y: auto;
+            padding: 10px;
+            margin-top: 15px;
+            border: 2px solid #a5b4fc;
+            border-radius: 8px;
+            background: #f8faff;
+            text-align: left;
+            line-height: 1.6;
+        }
     </style>
 </head>
 
@@ -70,17 +81,37 @@
 
     <h1>My Profile Cards</h1>
 
-    <!-- First profile card: Blue theme -->
+    <!-- Task 6.2: Blue Profile Card -->
     <section class="card">
         <div class="avatar">S</div>
+
         <h2>Shaurya Shrivastava</h2>
         <p>B.Tech Artificial Intelligence Student</p>
-        <p>Learning HTML and CSS</p>
+
+        <!-- Task 6.3: Scrollable Bio -->
+        <div class="bio">
+            <h3>About Me</h3>
+            <p>
+                Hello! I am Shaurya, a B.Tech Artificial Intelligence
+                student. I am learning HTML and CSS to build attractive
+                and responsive websites.
+            </p>
+            <p>
+                I enjoy learning new technologies, solving coding
+                problems, and improving my web development skills.
+            </p>
+            <p>
+                My goal is to become a skilled developer and create
+                useful projects. I want to learn JavaScript and explore
+                more areas of technology.
+            </p>
+        </div>
     </section>
 
-    <!-- Second profile card: Green theme -->
+    <!-- Task 6.2: Green Profile Card -->
     <section class="card card-green">
         <div class="avatar">S</div>
+
         <h2>My Coding Goals</h2>
         <p>Future Web Developer</p>
         <p>Learning new skills and building projects.</p>
