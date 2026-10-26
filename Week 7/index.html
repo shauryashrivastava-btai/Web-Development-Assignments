@@ -13,10 +13,11 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f4f6ff;
+            background: #ffffff;
+            color: #14213d;
         }
 
-        /* Task 7.1: Flexbox Navbar */
+        /* Task 7.1: Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -63,7 +64,7 @@
             cursor: pointer;
         }
 
-        /* Task 7.2: Centre Banner Using Flexbox */
+        /* Task 7.2: Banner */
         .banner {
             display: flex;
             flex-direction: column;
@@ -83,9 +84,36 @@
 
         .banner p {
             margin: 0 0 20px;
-            font-size: 16px;
         }
 
+        /* Task 7.3: Flexbox Cards */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 25px 20px;
+        }
+
+        .card {
+            flex: 1 1 200px;
+            min-width: 0;
+            padding: 25px 15px;
+            border-radius: 12px;
+            background: #eef2ff;
+            text-align: center;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        /* Mobile adjustments */
         @media (max-width: 480px) {
             .navbar {
                 padding: 15px 10px;
@@ -115,6 +143,10 @@
             .banner h1 {
                 font-size: 26px;
             }
+
+            .cards {
+                padding: 20px 12px;
+            }
         }
     </style>
 </head>
@@ -136,11 +168,36 @@
         </div>
     </header>
 
-    <!-- Task 7.2: Centred Banner -->
+    <!-- Task 7.2: Banner -->
     <section class="banner" id="home">
         <h1>Learn Web Development</h1>
         <p>Start from zero. Build real projects.</p>
         <button class="get-started">Get started</button>
+    </section>
+
+    <!-- Task 7.3: Four Responsive Cards -->
+    <section class="cards" id="courses">
+
+        <div class="card">
+            <h2>HTML</h2>
+            <p>Build the structure</p>
+        </div>
+
+        <div class="card">
+            <h2>CSS</h2>
+            <p>Make it beautiful</p>
+        </div>
+
+        <div class="card">
+            <h2>JavaScript</h2>
+            <p>Make it smart</p>
+        </div>
+
+        <div class="card">
+            <h2>Git</h2>
+            <p>Save your work</p>
+        </div>
+
     </section>
 
 </body>
