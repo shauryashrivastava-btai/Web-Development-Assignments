@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 7 - Flexbox Landing Page</title>
+    <title>CodeLab - Learn Web Development</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #ffffff;
             color: #14213d;
+            background: white;
         }
 
         /* Task 7.1: Navbar */
@@ -22,6 +26,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
             padding: 15px 25px;
             background: #14213d;
             color: white;
@@ -32,15 +37,17 @@
             font-weight: bold;
         }
 
-        .nav-right {
+        .nav-right,
+        .nav-links {
             display: flex;
             align-items: center;
+        }
+
+        .nav-right {
             gap: 25px;
         }
 
         .nav-links {
-            display: flex;
-            align-items: center;
             gap: 20px;
         }
 
@@ -71,7 +78,7 @@
             justify-content: center;
             align-items: center;
             min-height: 300px;
-            padding: 30px 15px;
+            padding: 35px 15px;
             background: #315bea;
             color: white;
             text-align: center;
@@ -84,14 +91,17 @@
 
         .banner p {
             margin: 0 0 20px;
+            line-height: 1.6;
         }
 
-        /* Task 7.3: Flexbox Cards */
+        /* Task 7.3: Cards */
         .cards {
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             padding: 25px 20px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .card {
@@ -113,10 +123,28 @@
             font-size: 14px;
         }
 
-        /* Mobile adjustments */
+        /* Task 7.4: Landing Page Sections */
+        .section-title {
+            margin: 30px 15px 0;
+            text-align: center;
+        }
+
+        .footer {
+            padding: 22px 15px;
+            background: #14213d;
+            color: white;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Mobile responsive layout */
         @media (max-width: 480px) {
             .navbar {
                 padding: 15px 10px;
+                gap: 8px;
             }
 
             .logo {
@@ -153,7 +181,7 @@
 
 <body>
 
-    <!-- Task 7.1: Navbar -->
+    <!-- Navbar -->
     <header class="navbar">
         <div class="logo">CodeLab</div>
 
@@ -164,41 +192,57 @@
                 <a href="#contact">Contact</a>
             </nav>
 
-            <button class="signup">Sign up</button>
+            <button class="signup"
+                onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+                Sign up
+            </button>
         </div>
     </header>
 
-    <!-- Task 7.2: Banner -->
-    <section class="banner" id="home">
-        <h1>Learn Web Development</h1>
-        <p>Start from zero. Build real projects.</p>
-        <button class="get-started">Get started</button>
-    </section>
+    <!-- Banner -->
+    <main>
+        <section class="banner" id="home">
+            <h1>Learn Web Development</h1>
+            <p>Start from zero. Build real projects.</p>
 
-    <!-- Task 7.3: Four Responsive Cards -->
-    <section class="cards" id="courses">
+            <button class="get-started"
+                onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+                Get started
+            </button>
+        </section>
 
-        <div class="card">
-            <h2>HTML</h2>
-            <p>Build the structure</p>
-        </div>
+        <!-- Course Cards -->
+        <section id="courses">
+            <h2 class="section-title">Explore Our Skills</h2>
 
-        <div class="card">
-            <h2>CSS</h2>
-            <p>Make it beautiful</p>
-        </div>
+            <div class="cards">
+                <article class="card">
+                    <h2>HTML</h2>
+                    <p>Build the structure</p>
+                </article>
 
-        <div class="card">
-            <h2>JavaScript</h2>
-            <p>Make it smart</p>
-        </div>
+                <article class="card">
+                    <h2>CSS</h2>
+                    <p>Make it beautiful</p>
+                </article>
 
-        <div class="card">
-            <h2>Git</h2>
-            <p>Save your work</p>
-        </div>
+                <article class="card">
+                    <h2>JavaScript</h2>
+                    <p>Make it smart</p>
+                </article>
 
-    </section>
+                <article class="card">
+                    <h2>Git</h2>
+                    <p>Save your work</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <p>© 2026 CodeLab | Keep Learning, Keep Building!</p>
+    </footer>
 
 </body>
 </html>
