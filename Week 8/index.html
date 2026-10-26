@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 - CSS Grid Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f8;
+            color: #14213d;
+            padding: 15px;
+        }
+
+        /* Task 8.1: CSS Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 170px 1fr;
+            gap: 15px;
+        }
+
+        .header {
+            grid-column: 1 / -1;
+            padding: 25px 15px;
+            background: #14213d;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .sidebar {
+            padding: 20px 15px;
+            background: #dce6ff;
+            border-radius: 8px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .sidebar ul {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            align-content: start;
+        }
+
+        .box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 15px;
+            background: white;
+            border-radius: 8px;
+            min-width: 0;
+        }
+
+        .icon {
+            font-size: 26px;
+        }
+
+        .footer {
+            grid-column: 1 / -1;
+            padding: 25px;
+            background: #14213d;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header class="header">
+            <h1>My Dashboard</h1>
+        </header>
+
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li>Home</li>
+                <li>Reports</li>
+                <li>Settings</li>
+            </ul>
+        </aside>
+
+        <main class="main">
+
+            <div class="box">
+                <span class="icon">👤</span>
+                <div>
+                    <h3>120</h3>
+                    <p>Users</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="icon">💰</span>
+                <div>
+                    <h3>Rs 45k</h3>
+                    <p>Sales</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="icon">📦</span>
+                <div>
+                    <h3>36</h3>
+                    <p>Orders</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="icon">⭐</span>
+                <div>
+                    <h3>4.8</h3>
+                    <p>Rating</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="icon">💬</span>
+                <div>
+                    <h3>18</h3>
+                    <p>Messages</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <span class="icon">✅</span>
+                <div>
+                    <h3>92%</h3>
+                    <p>Done</p>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <p>Made with CSS Grid</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
