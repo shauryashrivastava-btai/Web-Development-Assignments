@@ -2,15 +2,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Club</title>
-</head>
-<body><header id="hero">
+    <title>Coding Club</title><style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2ff;
+        color: #1e293b;
+        margin: 0;
+        padding: 20px;
+    }
+
+    #hero {
+        background-color: #315bea;
+        color: white;
+        text-align: center;
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .card {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #315bea;
+        color: white;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    input {
+        padding: 8px;
+        margin-top: 5px;
+    }
+
+    button {
+        background-color: #315bea;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+</head><body><header id="hero">
     <h1>Coding Club</h1>
     <p>Learn. Build. Share.</p>
 </header>
 
 <section class="card">
     <h2>Upcoming Events</h2>
+
     <table>
         <tr>
             <th>Event</th>
@@ -32,12 +92,13 @@
 
 <section class="card">
     <h2>Register</h2>
+
     <form>
-        <label for="name">Name:</label>
+        <label for="name">Name:</label><br>
         <input type="text" id="name" placeholder="Your name">
         <br><br>
 
-        <label for="email">Email:</label>
+        <label for="email">Email:</label><br>
         <input type="email" id="email" placeholder="you@example.com">
         <br><br>
 
