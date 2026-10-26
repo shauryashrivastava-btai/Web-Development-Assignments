@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 8 - Responsive Dashboard</title>
+    <title>Week 8 - CSS Grid Dashboard</title>
 
     <style>
         * {
@@ -19,15 +19,21 @@
             padding: 15px;
         }
 
-        /* Task 8.1: Main CSS Grid Layout */
+        /* Tasks 8.1 and 8.3: Named Grid Areas */
         .dashboard {
             display: grid;
             grid-template-columns: 170px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "head head"
+                "side main"
+                "foot foot";
             gap: 15px;
+            min-height: 90vh;
         }
 
         .header {
-            grid-column: 1 / -1;
+            grid-area: head;
             padding: 25px 15px;
             background: #14213d;
             color: white;
@@ -35,6 +41,7 @@
         }
 
         .sidebar {
+            grid-area: side;
             padding: 20px 15px;
             background: #dce6ff;
             border-radius: 8px;
@@ -50,8 +57,8 @@
             line-height: 1.8;
         }
 
-        /* Task 8.2: Responsive Grid */
         .main {
+            grid-area: main;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 12px;
@@ -82,7 +89,7 @@
         }
 
         .footer {
-            grid-column: 1 / -1;
+            grid-area: foot;
             padding: 25px;
             background: #14213d;
             color: white;
@@ -90,7 +97,7 @@
             border-radius: 8px;
         }
 
-        /* Mobile layout */
+        /* Responsive layout */
         @media (max-width: 600px) {
             body {
                 padding: 8px;
@@ -98,13 +105,11 @@
 
             .dashboard {
                 grid-template-columns: 1fr;
-            }
-
-            .header,
-            .sidebar,
-            .main,
-            .footer {
-                grid-column: 1 / -1;
+                grid-template-areas:
+                    "head"
+                    "side"
+                    "main"
+                    "foot";
             }
 
             .sidebar {
@@ -135,50 +140,32 @@
 
             <div class="box">
                 <span class="icon">👤</span>
-                <div>
-                    <h3>120</h3>
-                    <p>Users</p>
-                </div>
+                <div><h3>120</h3><p>Users</p></div>
             </div>
 
             <div class="box">
                 <span class="icon">💰</span>
-                <div>
-                    <h3>Rs 45k</h3>
-                    <p>Sales</p>
-                </div>
+                <div><h3>Rs 45k</h3><p>Sales</p></div>
             </div>
 
             <div class="box">
                 <span class="icon">📦</span>
-                <div>
-                    <h3>36</h3>
-                    <p>Orders</p>
-                </div>
+                <div><h3>36</h3><p>Orders</p></div>
             </div>
 
             <div class="box">
                 <span class="icon">⭐</span>
-                <div>
-                    <h3>4.8</h3>
-                    <p>Rating</p>
-                </div>
+                <div><h3>4.8</h3><p>Rating</p></div>
             </div>
 
             <div class="box">
                 <span class="icon">💬</span>
-                <div>
-                    <h3>18</h3>
-                    <p>Messages</p>
-                </div>
+                <div><h3>18</h3><p>Messages</p></div>
             </div>
 
             <div class="box">
                 <span class="icon">✅</span>
-                <div>
-                    <h3>92%</h3>
-                    <p>Done</p>
-                </div>
+                <div><h3>92%</h3><p>Done</p></div>
             </div>
 
         </main>
